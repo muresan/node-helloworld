@@ -10,5 +10,7 @@ COPY app/ /usr/src/app
 
 EXPOSE 3000
 
+HEALTHCHECK --interval=5s --timeout=5s --retries=3 CMD /usr/bin/nc -z 127.0.0.1 3000
+
 CMD [ "npm", "start" ]
 

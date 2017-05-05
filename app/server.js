@@ -8,7 +8,7 @@ var app = express();
 var localip = ni['eth0'][0].address;
 
 app.get('/', function(req, res) {
-  res.send("Hello " + req.ip + " from " + localip + "\n");
+  res.send("Hello v1.0 " + req.ip + " from " + localip + "\n");
 });
 
 app.listen(3000);
