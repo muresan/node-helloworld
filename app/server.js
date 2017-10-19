@@ -1,3 +1,6 @@
+/*
+ * Simple hello-world type app that shows also request headers, responses and IPs used on the client and server.
+ */
 
 var os = require('os');
 var ni = os.networkInterfaces();
