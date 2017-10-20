@@ -12,9 +12,16 @@ var localip = ni['eth0'][0].address;
 
 app.enable('trust proxy');
 
+var world = 'world';
+
+if ( typeof process.env.WORLD !== 'undefined' ) {
+  world = process.env.WORLD;
+}
+
+
 app.get('/', function(req, res) {
   var body = JSON.stringify({ method: req.method, url: req.url, headers: req.headers, ip: req.ip, ips: req.ips }, null, 4);
-  res.send("Hello v1.0 " + req.ip + " from " + localip + "\n" + body);
+  res.send("Hello " + world + " : " + req.ip + " from " + localip + "\n" + body);
 });
 
 app.listen(3000);
